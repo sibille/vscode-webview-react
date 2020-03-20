@@ -18,7 +18,7 @@
     "postinstall": "node ./node_modules/vscode/bin/install",
     "start": "react-scripts start",
     "build": "node ./scripts/build-non-split.js",
-    "postbuild": "rm -rf ../ext/build && mv build ../ext/build",
+    "postbuild": "rm -rf ../ext/react && mv build ../ext/react",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
