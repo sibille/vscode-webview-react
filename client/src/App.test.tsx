@@ -1,9 +1,17 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import App from './App';
+import * as React from "react";
+import { shallow } from "enzyme";
+import App from "./App";
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+xdescribe("App", () => {
+  let props: any;
+  let wrapper: any;
+
+  beforeEach(() => {
+    props = {};
+    wrapper = shallow(<App {...props} />);
+  });
+
+  it("renders without crashing", () => {
+    expect(wrapper).toBeDefined();
+  });
 });

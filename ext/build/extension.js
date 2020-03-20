@@ -67,8 +67,8 @@ class ReactPanel {
     }
     _getHtmlForWebview() {
         const manifest = require(path.join(this._extensionPath, 'react', 'asset-manifest.json'));
-        const mainScript = manifest['main.js'];
-        const mainStyle = manifest['main.css'];
+        let mainScript = manifest.files["main.js"];
+        let mainStyle = manifest.files["main.css"];
         const scriptPathOnDisk = vscode.Uri.file(path.join(this._extensionPath, 'react', mainScript));
         const scriptUri = scriptPathOnDisk.with({ scheme: 'vscode-resource' });
         const stylePathOnDisk = vscode.Uri.file(path.join(this._extensionPath, 'react', mainStyle));
@@ -83,7 +83,6 @@ class ReactPanel {
 				<meta name="theme-color" content="#000000">
 				<title>React App</title>
 				<link rel="stylesheet" type="text/css" href="${styleUri}">
-				<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src vscode-resource: https:; script-src 'nonce-${nonce}';style-src vscode-resource: 'unsafe-inline' http: https: data:;">
 				<base href="${vscode.Uri.file(path.join(this._extensionPath, 'react')).with({ scheme: 'vscode-resource' })}/">
 			</head>
 
