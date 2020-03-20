@@ -1,6 +1,6 @@
 {
   "name": "vscode-webview-react",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "engines": {
     "vscode": "^1.23.0"
   },
